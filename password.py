@@ -58,7 +58,7 @@ def update_password(passwords):
                         break
                     elif is_okey.upper() == "N": # Girilen N harfinin küçük ya da büyük olmasını önemsizleştirir.
                         continue
-                with open(password_file, "w") as file: # password_file adlı soyayı yazma modunda açar. Passwords adlı disctionary'e göre günceller.
+                with open(password_file, "w") as file: # password_file adlı dosyayı yazma modunda açar. Passwords adlı disctionary'e göre günceller.
                     for site, password in passwords.items():
                         file.write(f"{site} : {password}\n")
                 break
@@ -88,7 +88,8 @@ def generate_password( num_letters, num_digits, num_punctuation):
     return ''.join(password) #Listenin elemanlarını aralarında boşluk kalmayacak şekilde birleştirir.
 
 
-def found_site(passwords, input_site): # Girilen site adı dictonary içinde varsa 1 değerini döndürür.(büyük küçük harf önemsiz)     bool_found = 0
+def found_site(passwords, input_site): # Girilen site adı dictonary içinde varsa 1 değerini döndürür.(büyük küçük harf önemsiz)
+    bool_found = 0
     for site in passwords:
         if site.upper() == input_site.upper():
             bool_found = 1
